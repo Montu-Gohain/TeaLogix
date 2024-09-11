@@ -1,0 +1,7 @@
+# Todo : Ignore node_modules, .env. and .dist folders
+
+client/node_modules
+server/node_modules
+server/.env
+client/dist
+server/dist
