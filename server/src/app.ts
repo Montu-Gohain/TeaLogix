@@ -11,7 +11,7 @@ app.use(express.json()); // Json Body-parser
 app.get("/", (req: Request, res: Response) => {
   res.send("<h1>Welcome to TeaLogix API</h1>");
 });
-
+``;
 const PORT = process.env.PORT ?? 5555;
 
 app.listen(PORT, () =>
