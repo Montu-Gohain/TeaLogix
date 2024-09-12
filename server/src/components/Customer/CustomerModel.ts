@@ -18,14 +18,17 @@ Customer.init(
     },
     name: {
       type: DataTypes.STRING,
+      unique: true,
       allowNull: false,
     },
     email: {
       type: DataTypes.STRING,
+      unique: true,
       allowNull: false,
     },
     contanct_no: {
       type: DataTypes.BIGINT,
+      unique: true,
       allowNull: true,
     },
   },

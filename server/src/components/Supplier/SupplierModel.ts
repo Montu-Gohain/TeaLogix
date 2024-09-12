@@ -7,6 +7,7 @@ class Supplier extends Model {
   public name!: string;
   public email!: string;
   public contact_no!: number;
+  public country!: string;
 }
 
 Supplier.init(
@@ -18,15 +19,22 @@ Supplier.init(
     },
     name: {
       type: DataTypes.STRING,
+      unique: true,
       allowNull: false,
     },
     email: {
       type: DataTypes.STRING,
+      unique: true,
       allowNull: false,
     },
     contact_no: {
       type: DataTypes.BIGINT,
+      unique: true,
       allowNull: true,
+    },
+    country: {
+      type: DataTypes.STRING,
+      allowNull: false,
     },
   },
   {

@@ -39,6 +39,6 @@ sequelize
 const PORT = process.env.PORT ?? 5555;
 app.listen(PORT, () =>
   console.log(
-    chalk.bgWhite.blue(`Server is running at http://localhost:${PORT}`)
+    chalk.bgWhite.red(`Server is running at http://localhost:${PORT}`)
   )
 );

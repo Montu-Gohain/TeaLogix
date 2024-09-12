@@ -11,6 +11,6 @@ const router = Router();
 router.get("/list", GetSuppliers);
 router.post("/add", addSupplier);
 router.put("/edit", EditSupplier);
-router.put("/edit", DeleteSupplier);
+router.delete("/delete/:id", DeleteSupplier);
 
 export default router;
