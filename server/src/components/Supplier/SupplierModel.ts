@@ -1,19 +1,20 @@
 import { Model, DataTypes } from "sequelize";
 import sequelize from "../../config/database";
+import { v4 as uuidV4 } from "uuid";
 
 class Supplier extends Model {
-  public id!: number;
+  public id!: string;
   public name!: string;
   public email!: string;
-  public contanct_no!: number;
+  public contact_no!: number;
 }
 
 Supplier.init(
   {
     id: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
+      defaultValue: uuidV4,
       primaryKey: true,
-      autoIncrement: true,
     },
     name: {
       type: DataTypes.STRING,
@@ -23,8 +24,8 @@ Supplier.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    contanct_no: {
-      type: DataTypes.INTEGER,
+    contact_no: {
+      type: DataTypes.BIGINT,
       allowNull: true,
     },
   },

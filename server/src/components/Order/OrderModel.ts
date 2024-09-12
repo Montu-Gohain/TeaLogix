@@ -1,9 +1,10 @@
 import { Model, DataTypes } from "sequelize";
 import sequelize from "../../config/database";
+import { v4 as uuidV4 } from "uuid";
 
 class Order extends Model {
-  public id!: number;
-  public customerId!: number; // FK to Customer
+  public id!: string;
+  public customerId!: string; // FK to Customer
   public OrderStatus!: string; // "pending","completed"
   public totalAmountInKG!: number;
 }
@@ -11,12 +12,12 @@ class Order extends Model {
 Order.init(
   {
     id: {
-      type: DataTypes.INTEGER,
-      autoIncrement: true,
+      type: DataTypes.STRING,
+      defaultValue: uuidV4,
       primaryKey: true,
     },
     customerId: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: false,
     },
     OrderStatus: {

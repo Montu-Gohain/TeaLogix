@@ -4,6 +4,7 @@ import cors from "cors";
 import chalk from "chalk";
 import sequelize from "./config/database";
 import associations from "./config/associations";
+import allRoutes from "./config/routes";
 dotenv.config();
 
 const app = express();
@@ -14,10 +15,18 @@ app.get("/", (req: Request, res: Response) => {
   res.send("<h1>Welcome to TeaLogix API</h1>");
 });
 
+// Adding all the routes
+
+app.use("/api/v1", allRoutes);
+
 associations();
 
+/**
+ * To sync all the tables, pass this object in sync function
+ * { alter: true, force: true }
+ * */
 sequelize
-  .sync({ alter: true, force: true })
+  .sync()
   .then(() =>
     console.log(
       chalk.bgBlack.green("Database connected & all tables are synced")

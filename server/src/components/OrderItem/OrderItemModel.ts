@@ -1,8 +1,9 @@
 import sequelize from "../../config/database";
 import { Model, DataTypes } from "sequelize";
+import { v4 as uuidV4 } from "uuid";
 
 class OrderItem extends Model {
-  public orderId!: number; // FK to Order
+  public orderId!: string; // FK to Order
   public teaProductId!: number; // FK to TeaProduct
   public quantity!: number;
 }
@@ -10,7 +11,7 @@ class OrderItem extends Model {
 OrderItem.init(
   {
     orderId: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: false,
     },
     teaProductId: {
