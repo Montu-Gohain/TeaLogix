@@ -84,7 +84,7 @@ export const EditSupplier = async (req: Request, res: Response) => {
     console.log(error);
     return res.status(500).send({
       type: "failure",
-      message: `Suppiler can't be created due to ${error}`,
+      message: `Suppiler can't be updated due to ${error}`,
     });
   }
 };
@@ -111,7 +111,7 @@ export const DeleteSupplier = async (req: Request, res: Response) => {
     console.log(error);
     return res.status(500).send({
       type: "failure",
-      message: `Suppiler can't be created due to ${error}`,
+      message: `Suppiler can't be deleted due to ${error}`,
     });
   }
 };
