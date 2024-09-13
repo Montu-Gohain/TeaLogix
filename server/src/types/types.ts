@@ -7,3 +7,12 @@ export interface Suppiler_ {
   contact_no: number;
   country: string;
 }
+
+export interface TeaProduct_ {
+  id: string;
+  name: string;
+  type: string;
+  stockQuantity: number;
+  pricePerKg: number;
+  supplierId: string;
+}
